@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  db:
+    container_name: pg_container
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: database_1
+    ports:
+      - "5432:5432"
+    volumes:
+      - C:\Users\PC\Documents\Matias\data_projects\datos_abiertos_ciencia_tecnologia:/var/lib/postgresql/data_practise
+  pgadmin:  
+    container_name: pgadmin4_container  
+    image: dpage/pgadmin4  
+    restart: always  
+    environment:  
+      PGADMIN_DEFAULT_EMAIL: admin@gmail.com  
+      PGADMIN_DEFAULT_PASSWORD: root  
+    ports:  
+      - "5050:80"
